@@ -40,13 +40,12 @@ if(isset($_POST['done'])) {
            <br/>
 
            <div class="form-group-row">
-           <label >MovieName</label>
-           <br/>
-           <input type="text" name="MovieName" > <br>
+           <label >MovieName :</label>
+            <input type="text"  class="form-control" name="MovieName" > <br>
            </div>
            <br/>
             <div class="form-group-row ">
-            <label for="Language">Language</label>
+            <label for="Language">Language :</label>
             <br/>
             <div class="row-sm-5">
                 <select name="Language" class="form-control" >
@@ -58,13 +57,13 @@ if(isset($_POST['done'])) {
             </div>
             <br/>
             <div class="form-group-row">
-                <label >Budget</label>
+                <label >Budget :</label>
                 <br/>
-                <input type="text" name="Budget"> <br>
+                <input type="text"  class="form-control" name="Budget"> <br>
            </div>
            <br/>
             <div class="form-group-row">
-                <label for="Type">Type</label>
+                <label for="Type">Type :</label>
                 <br/>
                 <select name="Type" class="form-control" >
                     <option>3D</option>

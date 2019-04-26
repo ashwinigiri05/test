@@ -30,8 +30,8 @@ if(isset($_POST['done'])) {
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-
-    <div class="container">
+<br/>
+    <div class="container md-6">
 
     <form  method="post" >
        <div class="card">
@@ -41,13 +41,13 @@ if(isset($_POST['done'])) {
            <br/>
 
            <div class="form-group-row">
-           <label >MovieName</label>
+           <label >MovieName :</label>
            <br/>
-           <input type="text" name="MovieName" value="<?php echo $MovieName;?>"> <br>
+           <input type="text"  class="form-control" name="MovieName" value="<?php echo $MovieName;?>"> <br>
            </div>
            <br/>
             <div class="form-group-row ">
-            <label for="Language">Language</label>
+            <label for="Language">Language :</label>
             <br/>
             <div class="row-sm-5">
                 <select name="Language" class="form-control" value="<?php echo $Language;?>" >
@@ -59,13 +59,13 @@ if(isset($_POST['done'])) {
             </div>
             <br/>
             <div class="form-group-row">
-                <label >Budget</label>
+                <label >Budget :</label>
                 <br/>
-                <input type="text" name="Budget" value="<?php echo $Budget;?> "> <br>
+                <input type="text"  class="form-control" name="Budget" value="<?php echo $Budget;?> "> <br>
            </div>
            <br/>
             <div class="form-group-row">
-                <label for="Type">Type</label>
+                <label for="Type">Type :</label>
                 <br/>
                 <select name="Type" class="form-control" value="<?php echo $Type;?> ">
                 <option selected="">Select Type</option>
