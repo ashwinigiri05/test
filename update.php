@@ -1,15 +1,15 @@
 <?php
 
 include_once("config.php");
-print_r($_POST);
-//exit;
+
 if(isset($_POST['done'])) {
+    $Id = $_GET['Id'];
     $MovieName = $_POST['MovieName'];
     $Language = $_POST['Language'];
     $Budget = $_POST['Budget'];
     $Type = $_POST['Type'];
     try{
-        echo $q =  "INSERT INTO movies(MovieName,Language,Budget,Type) VALUES('$MovieName','$Language','$Budget',' $Type')";
+        echo $q =  "UPDATE movies SET  Id=$Id , MovieName='$MovieName',Language='$Language',Budget='$Budget',Type='$Type' WHERE Id=$Id";
         $result = mysqli_query($mysqli,$q);
     }
    catch(Exception $e) {
@@ -17,6 +17,7 @@ if(isset($_POST['done'])) {
 
    }
 }
+
 ?>
 <html >
 <head>
@@ -35,21 +36,21 @@ if(isset($_POST['done'])) {
     <form  method="post" >
        <div class="card">
            <div class="card-header bg-dark">
-              <h4 class="text-white text-center">Insert operation</h4>
+              <h4 class="text-white text-center">Update Operation</h4>
            </div>
            <br/>
 
            <div class="form-group-row">
            <label >MovieName</label>
            <br/>
-           <input type="text" name="MovieName" > <br>
+           <input type="text" name="MovieName" value="<?php echo $MovieName;?>"> <br>
            </div>
            <br/>
             <div class="form-group-row ">
             <label for="Language">Language</label>
             <br/>
             <div class="row-sm-5">
-                <select name="Language" class="form-control" >
+                <select name="Language" class="form-control" value="<?php echo $Language;?>" >
                 <option selected="">Select Language</option>
                 <option>English</option>
                 <option>Hindi</option>
@@ -60,13 +61,14 @@ if(isset($_POST['done'])) {
             <div class="form-group-row">
                 <label >Budget</label>
                 <br/>
-                <input type="text" name="Budget"> <br>
+                <input type="text" name="Budget" value="<?php echo $Budget;?> "> <br>
            </div>
            <br/>
             <div class="form-group-row">
                 <label for="Type">Type</label>
                 <br/>
-                <select name="Type" class="form-control" >
+                <select name="Type" class="form-control" value="<?php echo $Type;?> ">
+                <option selected="">Select Type</option>
                     <option>3D</option>
                     <option>2D</option>
                 </select>
@@ -74,7 +76,7 @@ if(isset($_POST['done'])) {
             <br/>
           
         <div class="col">
-            <input type="submit" class="btn btn-primary mb-2" name="done" value="Submit">
+            <input type="submit" class="btn btn-primary mb-2" name="done" value="Submit" >
         </div>
         
 

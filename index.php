@@ -18,10 +18,10 @@ $result = mysqli_query($mysqli,$q );
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <a href="insert.php">Insert Data</a><br/><br/>
- 
-    <table class="table">
-  <thead class="thead-dark">
+    <a  class="text-right" href="insert.php">Insert Data</a><br/><br/>
+ <div class="container">
+ <table class="table table-hover">
+ <thead class="thead-dark">
     <tr>
       <td scope="col">#</td>
       <td scope="col">MovieName</td>
@@ -41,11 +41,13 @@ $result = mysqli_query($mysqli,$q );
             echo "<td>".$res['Language']."</td>";
             echo "<td>".$res['Budget']."</td>";   
             echo "<td>".$res['Type']."</td>";   
-            echo "<td ><a href=\"edit.php?Id=$res[Id]\">Edit</a> | <a href=\"delete.php?Id=$res[Id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>"; 
+            echo "<td ><a href=\"update.php?Id=$res[Id]\">Update</a> | <a href=\"delete.php?Id=$res[Id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>"; 
         }
         ?>
 </table>
 
+ </div>
+ 
 
 </body>
 </html>
